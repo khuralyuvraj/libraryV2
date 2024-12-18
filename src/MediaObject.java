@@ -1,15 +1,17 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class MediaObject {
     Scanner scn =  new Scanner(System.in);
     private String title;
     private int yearPublished;
-    private int copies;
-    private boolean isCheckedIn = true;
-    private String checkOutPerson;
+    private int copies = 1;
+    private int copiesAvailable;
+    private ArrayList<String> checkedOutPeople = new ArrayList<>();
 
-    public MediaObject(String title){
+    public MediaObject(String title, int yearPublished){
         this.title = title;
+        this.yearPublished = yearPublished;
     }
 
     public String getTitle(){
@@ -27,22 +29,24 @@ public abstract class MediaObject {
     public int getCopies(){
         return copies;
     }
-    public void addCopies(){
+    public void addCopy(){
         this.copies++;
     }
-    public boolean getCheckedStatus(){
-        return isCheckedIn;
+    public int getCopiesAvailable(){
+        return copiesAvailable;
     }
-    public String getCheckedOutPerson(){
-        return checkOutPerson;
+    public ArrayList<String> getCheckedOutPerson(){
+        return checkedOutPeople;
     }
     public void checkOutByName(String checkOutPerson){
-        this.checkOutPerson = checkOutPerson;
-        this.isCheckedIn = false;
+        if (copies>this.checkedOutPeople.size()){
+            this.checkedOutPeople.add(checkOutPerson);
+        }
+        this.copiesAvailable--;
     }
     public void checkIn(){
-        this.checkOutPerson = null;
-        this.isCheckedIn = true;
+        this.checkedOutPeople = null;
+        this.copiesAvailable++;
     }
 
     public abstract void printInfo();
