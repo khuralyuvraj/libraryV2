@@ -13,10 +13,10 @@ public class Game extends MediaObject {
         System.out.println("Copies: " + getCopies());
         System.out.println("Number of pages: " + numPlayers);
         if(getCopiesAvailable()>0){
-            System.out.println("There are currently " + getCopiesAvailable() + " games checked in.");
+            System.out.println(getCopiesAvailable() + " game(s) checked in.");
         }
-        else if(getCopies()>getCopiesAvailable()){
-            System.out.println("There are currently " + (getCopies()-getCopiesAvailable()) + " games checked out by " + getCheckedOutPerson() + ".");
+        if(getCopies()>getCopiesAvailable()){
+            System.out.println((getCopies()-getCopiesAvailable()) + " game(s) checked out by " + getCheckedOutPerson() + ".");
         }
     }
 }

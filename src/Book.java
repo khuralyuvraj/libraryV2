@@ -13,10 +13,10 @@ public class Book extends MediaObject {
         System.out.println("Copies: " + getCopies());
         System.out.println("Number of pages: " + numPages);
         if(getCopiesAvailable()>0){
-            System.out.println("There are currently " + getCopiesAvailable() + " books checked in.");
+            System.out.println(getCopiesAvailable() + " book(s) checked in.");
         }
-        else if(getCopies()>getCopiesAvailable()){
-            System.out.println("There are currently " + (getCopies() - getCopiesAvailable()) + " books checked out by " + getCheckedOutPerson() + ".");
+        if(getCopies()>getCopiesAvailable()){
+            System.out.println((getCopies() - getCopiesAvailable()) + " book(s) checked out by " + getCheckedOutPerson() + ".");
         }
     }
 }

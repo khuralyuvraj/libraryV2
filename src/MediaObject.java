@@ -5,13 +5,15 @@ public abstract class MediaObject {
     Scanner scn =  new Scanner(System.in);
     private String title;
     private int yearPublished;
-    private int copies = 1;
+    private int copies;
     private int copiesAvailable;
     private ArrayList<String> checkedOutPeople = new ArrayList<>();
 
     public MediaObject(String title, int yearPublished){
         this.title = title;
         this.yearPublished = yearPublished;
+        this.copies = 1;
+        this.copiesAvailable = copies;
     }
 
     public String getTitle(){
@@ -31,6 +33,7 @@ public abstract class MediaObject {
     }
     public void addCopy(){
         this.copies++;
+        this.copiesAvailable++;
     }
     public int getCopiesAvailable(){
         return copiesAvailable;
