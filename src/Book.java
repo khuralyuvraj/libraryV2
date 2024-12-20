@@ -9,7 +9,7 @@ public class Book extends MediaObject {
     @Override
     public void printInfo(){
         System.out.println("Title: " + getTitle());
-        System.out.println("Year Published: " + getYearPublished());
+        System.out.println("Year Published: " + getPublishingYear());
         System.out.println("Copies: " + getCopies());
         System.out.println("Number of pages: " + numPages);
         if(getCopiesAvailable()>0){

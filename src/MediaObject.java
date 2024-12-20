@@ -19,6 +19,9 @@ public abstract class MediaObject {
     public String getTitle(){
         return title;
     }
+    public int getPublishingYear(){
+        return yearPublished;
+    }
     public void setTitle(String title){
         this.title = title;
     }
