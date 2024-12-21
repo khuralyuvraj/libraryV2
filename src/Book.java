@@ -1,4 +1,4 @@
-public class Book extends MediaObject {
+public class Book extends MediaObject{
     private int numPages;
 
     public Book(String title, int yearPublished, int numPages){

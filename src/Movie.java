@@ -1,7 +1,7 @@
-public class Movie extends MediaObject {
-    private double runTime; // in mins
+public class Movie extends MediaObject{
+    private int runTime; // in secs
 
-    public Movie(String title, int yearPublished, double runTime){
+    public Movie(String title, int yearPublished, int runTime){
         super(title, yearPublished);
         this.runTime = runTime;
     }
@@ -11,7 +11,7 @@ public class Movie extends MediaObject {
         System.out.println("Title: " + getTitle());
         System.out.println("Year Published: " + getYearPublished());
         System.out.println("Copies: " + getCopies());
-        System.out.println("Number of pages: " + runTime);
+        System.out.println("Run Time: " + ((double) runTime)/60/60 + " hrs");
         if(getCopiesAvailable()>0){
             System.out.println(getCopiesAvailable() + " movie(s) checked in.");
         }

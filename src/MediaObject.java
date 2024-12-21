@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class MediaObject {
-    Scanner scn =  new Scanner(System.in);
+public abstract class MediaObject{
     private String title;
     private int yearPublished;
     private int copies;
@@ -45,13 +44,13 @@ public abstract class MediaObject {
         return checkedOutPeople;
     }
     public void checkOutByName(String checkOutPerson){
-        if (copies>this.checkedOutPeople.size()){
+        if(copies>this.checkedOutPeople.size()){
             this.checkedOutPeople.add(checkOutPerson);
         }
         this.copiesAvailable--;
     }
-    public void checkIn(){
-        this.checkedOutPeople = null;
+    public void checkInByName(String person){
+        this.checkedOutPeople.remove(person);
         this.copiesAvailable++;
     }
 

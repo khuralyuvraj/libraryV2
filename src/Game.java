@@ -1,4 +1,4 @@
-public class Game extends MediaObject {
+public class Game extends MediaObject{
     private int numPlayers;
 
     public Game(String title, int yearPublished, int numPlayers){
